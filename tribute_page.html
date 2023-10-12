@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribute page</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body{
+            font-family: Times, serif;
+            color: white;
+            background-color: #081b29;
+        }
+        .header{
+            padding: 2rem;
+            margin: 1rem 0px;
+            text-align: center;
+        }
+        .title{
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .tribute{
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            max-width: 78rem;
+            margin: 0px auto;
+            background: white;
+            color: black;
+            align-items: center;
+            padding: 0px 0px 0px 1rem;
+        }
+        .tribute blockquote{
+            text-align: center;
+            font-size: 3rem;
+            font-family: 'ADLaM Display';
+        }
+        .tribute img{
+            max-width: 100%;
+        }
+        .timeline{
+            position: relative;
+            max-width: 1200px;
+            margin: 100px auto;
+        }
+        .container{
+            padding: 10px 50px;
+            position: relative;
+            width: 50%;
+           animation: movedown 1s linear forwards;
+           opacity: 0;
+        }
+        @keyframes movedown {
+            0%{
+                opacity: 1;
+                transform: translateY(-30px);
+            }
+            100%{
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+
+        .container:nth-child(1){
+            animation-delay: 0s;
+        }
+        .container:nth-child(2){
+            animation-delay: 1s;
+        }
+        .container:nth-child(3){
+            animation-delay: 2s;
+        }
+        .container:nth-child(4){
+            animation-delay: 3s;
+        }
+        .container:nth-child(5){
+            animation-delay: 4s;
+        }
+        .container:nth-child(6){
+            animation-delay: 5s;
+        }
+        .container:nth-child(7){
+            animation-delay: 6s;
+        }
+
+
+
+        .text-box{
+            padding: 20px 30px;
+            background: #fff;
+            border-radius: 6px;
+            font-size: 15px;
+            color: black;
+        }
+        .left-container{
+            left: 0;
+        }
+        .right-container{
+            left: 50%;
+        }
+        .container img{
+            position: absolute;
+            width: 40px;
+            border-radius: 50%;
+            right: -20px;
+            top: 32px;
+            z-index: 10;
+        }
+        .right-container img{
+            left: -20px;
+        }
+        .timeline::after{
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 100%;
+            background: #fff;
+            top: 0;
+            left: 50%;
+            margin-left: -3px;
+            z-index: -1;
+            animation: moveline 7s linear forwards;
+        }
+        @keyframes moveline {
+            0%{
+                height: 0%;
+            }
+            100%{
+                height: 100%;
+            }
+            
+        }
+
+
+
+        .text-box h2{
+            font-weight: 600;
+        }
+        .text-box small{
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .left-container-arrow{
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 28px;
+            left: 550px;
+            z-index: 1;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-left: 15px solid #fff;
+            
+        }
+        .right-container-arrow{
+            height: 0;
+            width: 0;
+            position: absolute;
+            top: 28px;
+            right: 550px;
+            z-index: 1;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-right: 15px solid #fff;
+           
+        }
+        @media screen and (max-width:600px) {
+            .timeline{
+                margin: 50px auto;
+            }
+            .timeline::after{
+                left: 31px;
+            }
+            .container{
+                width: 100%;
+                padding-left: 80px;
+                padding-right: 25px;
+            }
+            .text-box{
+                font-size: 13px;
+            }
+            .text-box small{
+                margin-bottom: 10px;
+            }
+            .right-container{
+                left: 0;
+            }
+            .left-container img, .right-container img{
+                left: 10px;
+            }
+            .left-container-arrow, .right-container-arrow{
+                border-right: 15px solid #fff;
+                border-left: 0;
+                left: 66px;
+            }
+        }
+
+        .bio{
+            margin: 2rem auto;
+            padding: 0px 0.5rem;
+            max-width: 40rem; 
+        }
+        .bio > h2{
+            margin-bottom: 1rem;
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+        .bio > p{
+            font-size: 1.2rem;
+            line-height: 1.4;
+        }
+        .bio > hr{
+            margin-top: 2rem;
+        }
+        .footer{
+            text-align: center;
+            margin-bottom: 50px;
+            
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1 class="title">Mother Teresa</h1>
+        <p class="description">1910 - 1997</p>
+    </header>
+    <section class="tribute">
+        <blockquote>
+            " A Beacon of Love, Compassion, and Selflessness, Inspiring Acts of Kindness Worldwide."
+        </blockquote>
+        <img src="o.jpg" alt="Mother teresa">
+        </section>
+<br>
+<br>
+        <h1 class="title">TimeLine</h1>
+
+        <div class="timeline">
+            
+            <div class="container left-container">
+                <img src="birth.png">
+                <div class="text-box">
+                    <h2>Birth</h2>
+                    <small>1910 - 1911</small>
+                    <p>Agnes Gonxha Bojaxhiu was born on August 26 in Skopje, Macedonia, which was then part of the Ottoman Empire. She later became known as Mother Teresa.</p>
+                    <span class="left-container-arrow"></span>
+                </div>
+            </div>
+            <div class="container right-container">
+                <img src="2nd.jpg">
+                <div class="text-box">
+                    <h2>Joining the Sisters of Loreto</h2>
+                    <small>1928 -1929</small>
+                    <p> At 18, she left home to join the Sisters of Loreto in Ireland, where she received religious training and took the name Sister Mary Teresa.</p>
+                    <span class="right-container-arrow"></span>
+                </div>
+            </div>
+            <div class="container left-container">
+                <img src="3rd.gif" alt="">
+                <div class="text-box">
+                    <h2>Leaving Loreto</h2>
+                    <small>1948 - 1949</small>
+                    <p>Mother Teresa experienced a "call within a call" from God, inspiring her to leave the Sisters of Loreto and begin the Missionaries of Charity in Calcutta, India, to help the destitute and dying.</p>
+                    <span class="left-container-arrow"></span>
+                </div>
+            </div>
+            <div class="container right-container">
+                <img src="5th.jpg" alt="">
+                <div class="text-box">
+                    <h2>Foundation of the Missionaries of Charity</h2>
+                    <small>1950 - 1951</small>
+                    <p>On October 7, Mother Teresa officially founded the Missionaries of Charity, dedicated to providing care and love to the most impoverished and neglected people in society.</p>
+                    <span class="right-container-arrow"></span>
+                </div>
+            </div>
+            <div class="container left-container">
+                <img src="6th.jpg" alt="">
+                <div class="text-box">
+                    <h2>Nobel Peace Prize</h2>
+                    <small>1979 - 1980</small>
+                    <p>Mother Teresa was awarded the Nobel Peace Prize for her unwavering dedication to humanitarian work, drawing global attention to her mission's efforts to alleviate suffering.</p>
+                    <span class="left-container-arrow"></span>
+                </div>
+            </div>
+            <div class="container right-container">
+                <img src="7th.jpg" alt="">
+                <div class="text-box">
+                    <h2>Death</h2>
+                    <small>1997 - 1998</small>
+                    <p>Mother Teresa passed away on September 5 in Calcutta, leaving behind a legacy of compassion, selflessness, and service, and she continues to inspire countless individuals to this day.</p>
+                <span class="right-container-arrow"></span>
+            </div>
+        </div>
+        <div class="container left-container">
+            <img src="8th.jpg" alt="">
+            <div class="text-box">
+                <h2>Canonization</h2>
+                <small>2016 - 2017</small>
+                <p>Mother Teresa was canonized, becoming Saint Teresa of Calcutta, by the Roman Catholic Church, recognizing her holiness and lifelong dedication to serving the poor and sick.</p>
+                <span class="left-container-arrow"></span>
+            </div>
+        </div>
+    </div>
+    <section class="bio">
+        <h2>Biography</h2>
+        <p>Mother Teresa, born in Skopje in 1910, dedicated her life to helping the destitute. 
+            As a Catholic nun, she founded the Missionaries of Charity in Calcutta, India, 
+            where she cared for the poorest of the poor. Her selflessness and compassion earned her 
+            international acclaim and the Nobel Peace Prize in 1979. Mother Teresa's legacy of love 
+            and kindness transcends borders, inspiring countless individuals to serve humanity. 
+            She passed away in 1997, but her impact lives on. In 2016, the Catholic Church canonized her as a saint, 
+            recognizing her profound humanitarian work. Mother Teresa's life serves as a testament to the enduring power 
+           of selfless service and unwavering love for the marginalized.</p><hr>
+    </section>
+    
+    <div class="footer">
+    For more information check out 
+        <a id=tribute-link href="https://en.wikipedia.org/wiki/Mother_Teresa">
+             <b>Mother Teresa</b></a> on wikipedia. [<small>Developed by @ <a href="#">Meghana]</a></small>
+        
+    </div>
+
+</body>
+</html>
